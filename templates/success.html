@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+	<section class="success">
+		<article>
+			<h1>Thank you for signing up!</h1>
+			<p>You can now <a href="{{ url_for('login') }}">Login</a></p>
+		</article>
+	</section>
+
+{% endblock %}

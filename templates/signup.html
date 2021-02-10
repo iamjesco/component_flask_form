@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+	<section class="signup">
+
+		<form class="signup_form" method="post" novalidate>
+			{{  form.hidden_tag() }}
+			<p>Join Us!</p>
+			<h1>Create your account</h1>
+			{% for field in form if field.widget.input_type != 'hidden' %}
+			{{ field.label }}
+			{{ field(class_="form-control") }}
+				<div class="signup_form_error">
+					{% if field.errors %}
+						{% for error in field.errors %}
+							{{ error }}
+						{% endfor %}
+					{% endif %}
+				</div>
+			{% endfor %}
+				<button type="submit">Join !</button>
+		</form>
+
+	</section>
+
+{% endblock %}
