@@ -23,7 +23,7 @@ def signup():
 		username = User(
 			request.form.get('username'),
 			request.form.get('email'),
-			request.form.get('password')
+			request.form.get('password'),
 		)
 		print(username)
 		return redirect(url_for('success'))
