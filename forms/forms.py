@@ -7,3 +7,8 @@ class SignUp(FlaskForm):
 	username = StringField('Username', [DataRequired(), Length(min=2, max=25)])
 	email = StringField('Email', [DataRequired(), Email()])
 	password = PasswordField('Password', [DataRequired(), Length(min=8, max=25)])
+
+
+class Login(FlaskForm):
+	username = StringField('Username', [DataRequired()])
+	password = PasswordField('Password', [DataRequired()])

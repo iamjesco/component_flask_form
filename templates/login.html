@@ -2,6 +2,21 @@
 
 {% block content %}
 	<section class="login">
-		<h1>Login</h1>
+		<form class="form" method="post" novalidate>
+			{{  form.csrf_token() }}
+			<h1>Log In</h1>
+			{% for field in form if field.widget.input_type != 'hidden' %}
+			{{ field.label }}
+			{{ field }}
+				<div class="form_error">
+					{% if field.errors %}
+						{% for error in field.errors %}
+							{{ error }}
+						{% endfor %}
+					{% endif %}
+				</div>
+			{% endfor %}
+				<button class="form_btn" type="submit">Login</button>
+		</form>
 	</section>
 {% endblock %}
